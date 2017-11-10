@@ -1,0 +1,17 @@
+{
+  "name": "clc",
+  "version": "1.0.0",
+  "description": "clc generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.0.2"
+  }
+}
