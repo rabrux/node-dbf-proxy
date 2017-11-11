@@ -1,7 +1,7 @@
 {
-  "name": "clc",
+  "name": "dbf-proxy",
   "version": "1.0.0",
-  "description": "clc generator",
+  "description": "dbf file reader and writer, proxy to c# executable",
   "main": "dist/dbf-proxy.js",
   "scripts": {
     "build": "coffee --output dist --compile src"
