@@ -1,5 +1,5 @@
 
-# Created by https://www.gitignore.io/api/osx,node,windows
+# Created by https://www.gitignore.io/api/osx,node,windows,vim
 
 ### Node ###
 # Logs
@@ -89,6 +89,20 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+### Vim ###
+# swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+# session
+Session.vim
+# temporary
+.netrwhist
+*~
+# auto-generated tag files
+tags
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -110,4 +124,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/osx,node,windows
+# End of https://www.gitignore.io/api/osx,node,windows,vim
