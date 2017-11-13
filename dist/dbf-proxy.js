@@ -22,10 +22,16 @@
       query = '"' + query + '"';
       command = [this._binary, '--path', this.getPath(), '--query', query];
       return exec(command.join(' '), function(err, stdout, stderr) {
+        var e;
         if (err) {
           return cb(stderr, null);
         }
-        return cb(null, JSON.parse(stdout));
+        try {
+          return cb(null, JSON.parse(stdout));
+        } catch (error) {
+          e = error;
+          return cb(e, stdout);
+        }
       });
     }
 

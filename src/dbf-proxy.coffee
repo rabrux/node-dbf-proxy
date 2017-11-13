@@ -20,7 +20,10 @@ class DBFProxy
 
     exec command.join( ' ' ), ( err, stdout, stderr ) ->
       return cb stderr, null if err
-      return cb null, JSON.parse stdout
+      try
+        return cb null, JSON.parse stdout
+      catch e
+        cb e, stdout
 
   # define getters and setters
   getPath : -> @_path
