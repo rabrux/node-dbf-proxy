@@ -19,7 +19,11 @@ class DBFProxy
     ]
 
     exec command.join( ' ' ), { maxBuffer: 1024 * bufferSize }, ( err, stdout, stderr ) ->
-      return cb stderr, null if err
+      if stderr.length is 0
+        return cb err, null
+      else
+        return cb stderr, null
+
       try
         return cb null, JSON.parse stdout
       catch e

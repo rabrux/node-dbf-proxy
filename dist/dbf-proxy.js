@@ -25,7 +25,9 @@
         maxBuffer: 1024 * bufferSize
       }, function(err, stdout, stderr) {
         var e;
-        if (err) {
+        if (stderr.length === 0) {
+          return cb(err, null);
+        } else {
           return cb(stderr, null);
         }
         try {
