@@ -17,11 +17,13 @@
       this._binary = path.join(__dirname, '..', 'bin', 'dbf.exe');
     }
 
-    query(query, cb) {
+    query(query, cb, bufferSize = 5000) {
       var command;
       query = '"' + query + '"';
       command = [this._binary, '--path', this.getPath(), '--query', query];
-      return exec(command.join(' '), function(err, stdout, stderr) {
+      return exec(command.join(' '), {
+        maxBuffer: 1024 * bufferSize
+      }, function(err, stdout, stderr) {
         var e;
         if (err) {
           return cb(stderr, null);

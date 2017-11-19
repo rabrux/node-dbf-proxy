@@ -8,7 +8,7 @@ class DBFProxy
     throw 'base path is required' if not @_path
     @_binary = path.join __dirname, '..', 'bin', 'dbf.exe'
 
-  query : ( query, cb ) -> 
+  query : ( query, cb, bufferSize = 5000 ) -> 
     query = '"' + query + '"'
     command = [
       @_binary
@@ -18,7 +18,7 @@ class DBFProxy
       query
     ]
 
-    exec command.join( ' ' ), ( err, stdout, stderr ) ->
+    exec command.join( ' ' ), { maxBuffer: 1024 * bufferSize }, ( err, stdout, stderr ) ->
       return cb stderr, null if err
       try
         return cb null, JSON.parse stdout
