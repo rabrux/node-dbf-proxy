@@ -19,11 +19,10 @@ class DBFProxy
     ]
 
     exec command.join( ' ' ), { maxBuffer: 1024 * bufferSize }, ( err, stdout, stderr ) ->
-      if stderr.length is 0
+      if stderr.length is 0 and err
         return cb err, null
-      else
+      if err
         return cb stderr, null
-
       try
         return cb null, JSON.parse stdout
       catch e
@@ -34,4 +33,3 @@ class DBFProxy
   setPath : ( @_path ) ->
 
 module.exports = DBFProxy
-
