@@ -1,5 +1,5 @@
 {
-  "name": "dbf-proxy",
+  "name": "node-dbf-proxy",
   "version": "1.0.1",
   "description": "dbf file reader and writer, proxy to c# executable",
   "main": "dist/dbf-proxy.js",
