@@ -6,10 +6,27 @@
   "scripts": {
     "build": "coffee --output dist --compile src"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "rabrux",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "coffeescript": "^2.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rabrux/node-dbf-proxy.git"
+  },
+  "keywords": [
+    "dbf",
+    "read",
+    "write",
+    "sql",
+    "foxpro",
+    "nodejs",
+    "proxy"
+  ],
+  "bugs": {
+    "url": "https://github.com/rabrux/node-dbf-proxy/issues"
+  },
+  "homepage": "https://github.com/rabrux/node-dbf-proxy#readme"
 }
