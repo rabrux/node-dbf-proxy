@@ -1,5 +1,5 @@
 # required nodejs modules
-exec = require( 'child_process' ).exec
+execFile = require( 'child_process' ).execFile
 path = require 'path'
 
 # DBFProxy class definition
@@ -8,17 +8,15 @@ class DBFProxy
     throw 'base path is required' if not @_path
     @_binary = path.join __dirname, '..', 'bin', 'dbf.exe'
 
-  query : ( query, cb, bufferSize = 5000 ) -> 
-    query = '"' + query + '"'
+  query : ( query, cb, bufferSize = 5000 ) ->
     command = [
-      @_binary
       '--path'
       @getPath()
       '--query'
       query
     ]
 
-    exec command.join( ' ' ), { maxBuffer: 1024 * bufferSize }, ( err, stdout, stderr ) ->
+    execFile @_binary, command, { maxBuffer: 1024 * bufferSize }, ( err, stdout, stderr ) ->
       if stderr.length is 0 and err
         return cb err, null
       if err
