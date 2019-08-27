@@ -1,12 +1,21 @@
 {
   "name": "dbf-proxy",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "dbf file reader and writer, proxy to c# executable",
   "main": "dist/dbf-proxy.js",
+  "files": [
+    "dist",
+    "bin"
+  ],
   "scripts": {
-    "build": "coffee --output dist --compile src"
+    "clean": "rm -rf ./dist",
+    "build": "coffee --output dist --compile src",
+    "prepublish": "yarn clean && yarn build"
   },
   "author": "rabrux",
+  "contributors": [
+    "Lucas Busellato <lucasbusellato@gmail.com>"
+  ],
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
